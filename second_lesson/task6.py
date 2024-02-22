@@ -1,0 +1,7 @@
+import pandas as pd
+taxi = pd.read_csv("https://stepik.org/media/attachments/lesson/360340/2_taxi_nyc.csv")
+taxi = taxi.rename(columns={"pcp 01": "pcp_01",
+                     "pcp 06": "pcp_06",
+                     "pcp 24": "pcp_24"})
+
+pickups_by_mon_bor = taxi.groupby(["borough", "pickup_month"], as_index=False).pickups.sum().sort_values("pickups", ascending=False)

@@ -1,0 +1,1 @@
+user_info = ["Anton", "Artemkov", 12343.43, 20]
